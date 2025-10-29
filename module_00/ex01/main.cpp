@@ -6,11 +6,11 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:31:47 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 12:58:09 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:30:46 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.class.hpp"
+#include "Phonebook.hpp"
 
 int main(int argc, char **argv)
 {

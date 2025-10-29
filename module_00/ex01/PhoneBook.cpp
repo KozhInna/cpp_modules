@@ -6,8 +6,8 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:51:27 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 12:51:41 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:30:53 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.class.hpp"
+#include "PhoneBook.hpp"

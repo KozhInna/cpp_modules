@@ -1,13 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 12:17:47 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 12:17:59 by ikozhina         ###   ########.fr       */
+/*   Created: 2025/10/29 12:16:56 by ikozhina          #+#    #+#             */
+/*   Updated: 2025/10/29 17:30:34 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
+#include <string>
+
+class Contact
+{
+    std::string index;
+};
+
+#endif

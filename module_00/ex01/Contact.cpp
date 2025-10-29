@@ -1,21 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 12:16:56 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 12:18:26 by ikozhina         ###   ########.fr       */
+/*   Created: 2025/10/29 12:17:47 by ikozhina          #+#    #+#             */
+/*   Updated: 2025/10/29 17:31:22 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
-
-class Contact
-{
-    
-};
-
-#endif
+#include "Contact.hpp"

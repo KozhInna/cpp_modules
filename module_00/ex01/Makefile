@@ -6,7 +6,7 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/29 11:24:53 by ikozhina          #+#    #+#              #
-#    Updated: 2025/10/29 12:57:36 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/10/29 17:33:21 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC := g++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++17 \
 
-SRCS := main.cpp Contact.class.cpp Phonebook.class.cpp
+SRCS := main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 

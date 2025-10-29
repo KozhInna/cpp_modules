@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:45:06 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 12:57:58 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:32:14 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-# include "Contact.class.hpp"
+# include "Contact.hpp"
 
-class Phonebook {
+class PhoneBook {
     
     Contact contacts[8];
 };
