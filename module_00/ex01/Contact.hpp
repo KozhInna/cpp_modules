@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:16:56 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 17:30:34 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:50:51 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,19 @@
 
 class Contact
 {
-    std::string index;
+    private:
+        std::string first_name;
+        std::string last_name;
+        std::string nickname;
+        std::string phone_number;
+        std::string secret;
+    
+    public:
+        Contact() {}
+        
+    //getter
+    //setter
+    //status is empty
 };
 
 #endif
