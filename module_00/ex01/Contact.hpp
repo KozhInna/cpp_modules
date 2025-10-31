@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:16:56 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/29 21:50:51 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/10/31 12:37:05 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,26 @@
 class Contact
 {
     private:
-        std::string first_name;
-        std::string last_name;
+        std::string firstName;
+        std::string lastName;
         std::string nickname;
-        std::string phone_number;
-        std::string secret;
+        std::string phoneNumber;
+        std::string darkestSecret;
     
     public:
         Contact() {}
         
-    //getter
-    //setter
-    //status is empty
+        std::string getFirstName() const;
+        std::string getLastName() const;
+        std::string getNickname() const;
+        std::string getPhoneNumber() const;
+        std::string getDarkestSecret() const;
+        
+        void setFirstName(const std::string& name);
+        void setLastName(const std::string& name);
+        void setNickname(const std::string& name);
+        void setPhoneNumber(const std::string& name);
+        void setDarkestSecret(const std::string& name);
 };
 
 #endif
