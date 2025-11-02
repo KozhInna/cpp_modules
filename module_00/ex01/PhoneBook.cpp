@@ -6,13 +6,22 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:51:15 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/31 23:31:04 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/02 10:17:15 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
+
+static std::string truncate(const std::string& str)
+{
+    if (str.length() > 10)
+    {
+        return (str.substr(0, 9) + ".");
+    }
+    return str;
+}
 
 void PhoneBook::setNumContacts()
 {
@@ -25,8 +34,6 @@ void PhoneBook::addContact(const Contact& contact)
     setNumContacts();
 }
 
-
-
 void PhoneBook::displayContacts()
 {
     std::cout << std::setw(10) << std::right << "Index" << "|"
@@ -36,18 +43,8 @@ void PhoneBook::displayContacts()
     for (int i = 0; i < numContacts; i++)
     {
         std::cout << std::setw(10) << std::right << (i + 1) << "|"
-        << std::setw(10) << std::right << contacts[i].getFirstName() << "|"
-        << std::setw(10) << std::right << contacts[i].getLastName() << "|"
-        << std::setw(10) << std::right << contacts[i].getNickname() << std::endl;
+        << std::setw(10) << std::right << truncate(contacts[i].getFirstName()) << "|"
+        << std::setw(10) << std::right << truncate(contacts[i].getLastName()) << "|"
+        << std::setw(10) << std::right << truncate(contacts[i].getNickname()) << std::endl;
     }
-}
-
-static std::string formatField(const std::string& str)
-{
-    if (str.length() > 10)
-    {
-        // truncate and add dot
-        // hint: use str.substr(0, 9) + "."
-    }
-    return str;
 }
