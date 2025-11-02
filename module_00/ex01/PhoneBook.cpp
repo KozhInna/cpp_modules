@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:51:15 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/02 12:43:37 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/02 17:53:06 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,12 @@ static std::string truncate(const std::string& str)
     return str;
 }
 
-void PhoneBook::setNumContacts()
-{
-    numContacts++; 
-}
-
 void PhoneBook::addContact(const Contact& contact)
 {
-    contacts[numContacts % 8] = contact;
-    setNumContacts();
+    contacts[nextIndex] = contact;
+    nextIndex = (nextIndex + 1) % 8;
+    if (numContacts < 8)
+        numContacts++;
 }
 
 void PhoneBook::displayContacts()
