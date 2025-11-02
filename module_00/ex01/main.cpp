@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:31:47 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/02 12:51:43 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/02 23:34:30 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,22 @@ void    handleSearch(PhoneBook& phonebook)
         return ;
     std::cout << "Specify an index" << std::endl;
     std::getline(std::cin, input);
-    if (input.empty())
-    {
-        std::cout << "No index" << std::endl;
-        return ;
-    }
-    if (!isNumber(input))
+    if (input.empty() || !isNumber(input))
     {
         std::cout << "Invalid index" << std::endl;
         return ;
     }
-    int index = std::stoi(input);
-    if (index >= 1 && index <= phonebook.getNumContacts()) 
+    try
+    {    
+        int index = std::stoi(input);
+        if (index < 1 || index > phonebook.getNumContacts())
+        {    
+            std::cout << "Invalid index" << std::endl;
+            return; 
+        }
         phonebook.displayContactInfo(index);
-    else
+    }
+    catch (const std::exception& e)
     {
         std::cout << "Invalid index" << std::endl;
         return ;
@@ -95,7 +97,6 @@ void    handleSearch(PhoneBook& phonebook)
 }
 
 //treat spaces after and before ADD and other prompts
-//handle bigger than int value for index
 
 int main(void)
 {
