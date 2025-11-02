@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:31:47 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/10/31 21:40:17 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/02 12:51:43 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,47 @@ void    handleAdd(PhoneBook& phonebook)
     
     phonebook.addContact(newContact);
 }
+bool isNumber(std::string& input)
+{
+    for (char c : input)
+    {
+        if (!std::isdigit(c))
+            return (false);
+    }
+    return (true);
+}
+
+void    handleSearch(PhoneBook& phonebook)
+{
+    std::string input;
+    
+    phonebook.displayContacts();
+    if (phonebook.getNumContacts() == 0)
+        return ;
+    std::cout << "Specify an index" << std::endl;
+    std::getline(std::cin, input);
+    if (input.empty())
+    {
+        std::cout << "No index" << std::endl;
+        return ;
+    }
+    if (!isNumber(input))
+    {
+        std::cout << "Invalid index" << std::endl;
+        return ;
+    }
+    int index = std::stoi(input);
+    if (index >= 1 && index <= phonebook.getNumContacts()) 
+        phonebook.displayContactInfo(index);
+    else
+    {
+        std::cout << "Invalid index" << std::endl;
+        return ;
+    }
+}
+
+//treat spaces after and before ADD and other prompts
+//handle bigger than int value for index
 
 int main(void)
 {
@@ -68,23 +109,9 @@ int main(void)
         if (input == "EXIT")
             return (0);
         else if (input == "SEARCH")
-        {
-            phonebook.displayContacts();
-        }
-            // std::cout << "You entered SEARCH" << std::endl;
+            handleSearch(phonebook);
         else if (input == "ADD")
             handleAdd(phonebook);
     }
-
-    
-        // Read user commands (ADD, SEARCH, EXIT)
-        // Call PhoneBook methods based on commands
-
-        // main → prompts user → user types "SEARCH"
-        // main → calls phonebook.displayAllContacts()
-        //     → phonebook uses contact.getFirstName() for each contact
-        // main → prompts for index
-        // main → calls phonebook.getContact(index)
-        //     → displays that contact's info
     return (0);
 }

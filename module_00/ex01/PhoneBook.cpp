@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:51:15 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/02 10:17:15 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/02 12:43:37 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,22 @@ void PhoneBook::displayContacts()
         << std::setw(10) << std::right << truncate(contacts[i].getLastName()) << "|"
         << std::setw(10) << std::right << truncate(contacts[i].getNickname()) << std::endl;
     }
+}
+
+void PhoneBook::displayContactInfo(int index)
+{
+    std::cout << "First name: ";
+    std::cout << contacts[index - 1].getFirstName() << std::endl;
+    std::cout << "Last name: ";
+    std::cout << contacts[index - 1].getLastName() << std::endl;
+    std::cout << "Nickname: ";
+    std::cout << contacts[index - 1].getNickname() << std::endl;
+    std::cout << "Phone number: ";
+    std::cout << contacts[index - 1].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: ";
+    std::cout << contacts[index - 1].getDarkestSecret() << std::endl;
+}      
+int PhoneBook::getNumContacts() const
+{
+    return numContacts;
 }
