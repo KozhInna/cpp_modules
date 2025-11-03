@@ -6,11 +6,13 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:51:15 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/03 11:03:27 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:30:08 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook() : numContacts(0), nextIndex(0) {}
 
 static std::string truncate(const std::string& str)
 {

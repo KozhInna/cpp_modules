@@ -6,12 +6,11 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:31:47 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/03 11:21:44 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:44:44 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
 
 bool	isEmpty(const std::string& str)
 {
@@ -32,7 +31,11 @@ std::string	promptContactInfo(const std::string& field)
 	while (true)
 	{
 		std::cout << field << ":" << std::endl;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "\nEnd of input." << std::endl;
+			return "";
+		}
 		if (isEmpty(input))
 		{
 			std::cout << "Field can't be empty" << std::endl;
@@ -70,10 +73,12 @@ void	handleSearch(PhoneBook& phonebook)
 	std::string input;
 
 	phonebook.displayContacts();
-	if (phonebook.getNumContacts() == 0)
-		return ;
 	std::cout << "Specify an index" << std::endl;
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+	{
+		std::cout << "\nEnd of input." << std::endl;
+		return ;
+	}
 	if (input.empty() || !isNumber(input))
 	{
 		std::cout << "Invalid index" << std::endl;
