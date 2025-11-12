@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/29 10:27:35 by ikozhina          #+#    #+#              #
-#    Updated: 2025/10/29 11:12:53 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/03 10:24:28 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := megaphone
 
-CC := g++
+CC := c++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++17
 
