@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:04 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/12 22:46:46 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:02:45 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int main()
 {
-    std::cout << "\nZOMBIE ON HEAP\n" << std::endl;
-    Zombie* ptrZombie = newZombie("ZzzHeap");
-    ptrZombie->announce();
-    delete ptrZombie;
-    std::cout << '\n' << std::string(30, '=') << std::endl;
-    std::cout << "\nZOMBIE ON STACK\n" << std::endl;
-    randomChump("ZzzStack");
-    std::cout << std::endl;
-    return 0;
+	std::cout << "\nZOMBIE ON HEAP\n" << std::endl;
+	Zombie* ptrZombie = newZombie("ZzzHeap");
+	ptrZombie->announce();
+	delete ptrZombie;
+	std::cout << '\n' << std::string(30, '-') << std::endl;
+	std::cout << "\nZOMBIE ON STACK\n" << std::endl;
+	randomChump("ZzzStack");
+	std::cout << std::endl;
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:13 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/12 14:39:13 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:03:19 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void randomChump(std::string name)
 {
-    Zombie z(name);
-    z.announce();
+	Zombie z(name);
+	z.announce();
 }

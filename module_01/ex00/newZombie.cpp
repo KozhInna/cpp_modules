@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:11 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/13 10:42:16 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:03:14 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Zombie* newZombie(std::string name)
 {
-    return new Zombie(name);
+	return new Zombie(name);
 }
