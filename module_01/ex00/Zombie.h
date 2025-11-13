@@ -6,12 +6,11 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:19 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/13 11:03:53 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:16:41 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#pragma once
 
 # include <string>
 
@@ -31,5 +30,3 @@ class Zombie
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
-
-#endif
