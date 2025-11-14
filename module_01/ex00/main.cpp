@@ -6,11 +6,11 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:04 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/13 11:02:45 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:15:06 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 #include <iostream>
 
 int main()

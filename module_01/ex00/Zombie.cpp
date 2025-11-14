@@ -6,12 +6,13 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:16 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/13 11:03:26 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:14:53 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 #include <iostream>
+#include <string>
 
 // Default Constructor
 Zombie::Zombie() {}
