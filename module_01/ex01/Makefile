@@ -6,7 +6,7 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 13:41:02 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/14 13:35:10 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/14 23:13:39 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,14 @@ SRCS := main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
+HEADER := Zombie.hpp
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-%.o: %.cpp
+%.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

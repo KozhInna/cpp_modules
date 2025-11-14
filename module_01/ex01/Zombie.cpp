@@ -6,21 +6,18 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:41:09 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/14 13:46:09 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/14 23:48:32 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie() : name("Unnamed") 
+Zombie::Zombie() 
 {
-    std::cout << name  << "\033[32m" << " is created" << "\033[0m" << std::endl;
-};
-
-Zombie::Zombie(std::string zombieName) : name(zombieName)
-{
-    std::cout << name << "\033[32m" << " is created" << "\033[0m" << std::endl;
+    static int count = 0;
+    count++;
+    std::cout  << "Zombie " << count << " is created" << std::endl;
 }
 
 Zombie::Zombie(const Zombie& other) : name(other.name) {}
@@ -32,9 +29,9 @@ Zombie& Zombie::operator=(const Zombie& other)
     return *this;
 }
 
-Zombie::~Zombie()
+Zombie::~Zombie() 
 {
-	std::cout << name << "\033[31m" << " is destroyed" << "\033[0m" << std::endl;
+    std::cout << name << " is destroyed" << "\033[0m" << std::endl;
 }
 
 void Zombie::announce(void)
