@@ -6,7 +6,7 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 13:41:02 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/13 14:02:16 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/14 13:35:10 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-%.o: %.cpp %.h
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
