@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:41:12 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/14 23:50:30 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/15 10:36:47 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Zombie
     public:
         Zombie();
         Zombie(std::string zombieName);
-        Zombie(const Zombie& other);
-        Zombie& operator=(const Zombie& other);
         ~Zombie();
         void announce(void);
         void setName(std::string zombieName);

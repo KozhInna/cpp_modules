@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:33:19 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/13 11:16:41 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/15 10:36:27 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Zombie
 	public:
 		Zombie();
 		Zombie(std::string zombieName);
-		Zombie(const Zombie& other);
-		Zombie& operator=(const Zombie& other);
 		~Zombie();
 		void announce(void);
 };

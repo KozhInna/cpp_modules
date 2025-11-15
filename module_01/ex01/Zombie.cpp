@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:41:09 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/14 23:48:32 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/15 10:37:29 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@ Zombie::Zombie()
     static int count = 0;
     count++;
     std::cout  << "Zombie " << count << " is created" << std::endl;
-}
-
-Zombie::Zombie(const Zombie& other) : name(other.name) {}
-
-Zombie& Zombie::operator=(const Zombie& other)
-{
-    if (this != &other)
-        name = other.name;
-    return *this;
 }
 
 Zombie::~Zombie() 
