@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:31:04 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/20 21:59:26 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/20 22:22:13 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ class Harl
     void error(void);    
     
     public:
+        Harl();
+        ~Harl();
         void complain(std::string level);        
 };
