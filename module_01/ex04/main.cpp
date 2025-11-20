@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:55:26 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/20 11:53:33 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:08:57 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ bool readAndWrite(const std::string& fileName, const std::string& s1, const std:
 		std::cerr << "Error: can't open file " << fileName << " for reading" << std::endl;
 		return false;
 	}
+	std::string fileContent{};
+	std::getline(ifs, fileContent, '\0');
+	ifs.close();
 	std::ofstream ofs(fileName + ".replace");
 	if (!ofs.is_open())
 	{
@@ -61,33 +64,27 @@ bool readAndWrite(const std::string& fileName, const std::string& s1, const std:
 		ifs.close();
 		return false;
 	}
-	std::string line;
-	while (std::getline(ifs, line))
+	ofs << replaceInLine(fileContent, s1, s2);
+	if (ofs.fail())
 	{
-		ofs << replaceInLine(line, s1, s2) << "\n";
-		if (ofs.fail())
-		{
-			std::cerr << "Error: failed to write to output file" << std::endl;
-			ifs.close();
-			return false;
-		}
+		std::cerr << "Error: failed to write to output file" << std::endl;
+		return false;
 	}
-	ifs.close();
 	ofs.close();
 	return true;
 }
 
-std::string replaceInLine(const std::string& line, const std::string& s1, const std::string& s2)
+std::string replaceInLine(const std::string& str, const std::string& s1, const std::string& s2)
 {
 	std::string newstr{};
 	size_t pos = 0;
 	size_t i = 0;
-	while ((pos = line.find(s1, pos)) != std::string::npos)
+	while ((pos = str.find(s1, pos)) != std::string::npos)
 	{
-		newstr += line.substr(i, pos - i) + s2;
+		newstr += str.substr(i, pos - i) + s2;
 		i = pos + s1.length();
 		pos = i;
 	}
-	newstr += line.substr(i);
+	newstr += str.substr(i);
 	return newstr;
 }
