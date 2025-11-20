@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:31:10 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/20 22:23:06 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/20 22:24:54 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include<iostream>
 
 Harl::Harl() {}
+
 Harl::~Harl() {}
 
 void Harl::debug(void)
