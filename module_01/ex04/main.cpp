@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:55:26 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/20 15:08:57 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/20 20:05:52 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ bool readAndWrite(const std::string& fileName, const std::string& s1, const std:
 	if (!ofs.is_open())
 	{
 		std::cerr << "Error: can't create output file " << fileName << ".replace" << std::endl;
-		ifs.close();
 		return false;
 	}
 	ofs << replaceInLine(fileContent, s1, s2);
