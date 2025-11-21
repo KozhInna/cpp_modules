@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:53:08 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/15 11:09:01 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/21 09:22:15 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := brain
 
-CC := g++
+CC := c++
 
 CFLAGS := -Werror -Wall -Wextra -std=c++17
 

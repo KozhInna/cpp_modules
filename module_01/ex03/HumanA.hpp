@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 20:32:25 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/16 21:35:04 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:34:30 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class HumanA
 {
-    private: 
-        std::string name_;
-        Weapon& weapon;
-    
-    public:
-        HumanA(const std::string& n, Weapon& w);
-        ~HumanA();
-        void attack() const;
+	private:
+		std::string name_;
+		Weapon& weapon;
+
+	public:
+		HumanA(const std::string& n, Weapon& w);
+		~HumanA();
+		void attack() const;
 };

@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 20:52:33 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/16 21:34:58 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:34:40 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 class HumanB
 {
-    private: 
-        std::string name_;
-        Weapon* weapon;
-    
-    public:
-        HumanB(const std::string& n);
-        ~HumanB();
-        void attack() const;
-        void setWeapon(Weapon& w);
+	private:
+		std::string name_;
+		Weapon* weapon;
+
+	public:
+		HumanB(const std::string& n);
+		~HumanB();
+		void attack() const;
+		void setWeapon(Weapon& w);
 };

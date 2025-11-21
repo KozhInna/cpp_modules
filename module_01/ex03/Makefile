@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 11:39:08 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/15 12:44:15 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/21 09:22:23 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := violence
 
-CC := g++
+CC := c++
 
 CFLAGS := -Werror -Wextra -Wall -std=c++17
 

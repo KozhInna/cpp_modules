@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/20 20:08:33 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/20 20:30:08 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/21 09:22:37 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := harl
 
-CC := g++
+CC := c++
 
 CFLAGS := -Werror -Wall -Wextra -std=c++17
 

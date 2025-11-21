@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 13:41:02 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/14 23:13:39 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/21 09:22:08 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := zombies
 
-CC := g++
+CC := c++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++17
 

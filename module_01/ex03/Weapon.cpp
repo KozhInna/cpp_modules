@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 19:55:59 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/16 22:30:13 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:34:59 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ Weapon::~Weapon() {}
 
 const std::string& Weapon::getType() const
 {
-    return type_;
+	return type_;
 }
 
 void Weapon::setType(const std::string& newType)
 {
-    type_ = newType;
+	type_ = newType;
 }

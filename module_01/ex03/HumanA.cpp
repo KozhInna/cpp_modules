@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 20:21:39 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/11/16 22:31:36 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:34:25 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ HumanA::~HumanA() {}
 
 void HumanA::attack() const
 {
-    std::cout << name_ << " attacks with their " << weapon.getType() << std::endl;
+	std::cout << name_ << " attacks with their " << weapon.getType() << std::endl;
 }
