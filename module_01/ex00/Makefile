@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 09:59:14 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/14 23:13:57 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/21 09:21:47 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := zombie
 
-CC := g++
+CC := c++
 
 CFLAGS := -Werror -Wextra -Wall -std=c++17
 
@@ -20,7 +20,7 @@ SRCS := main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
-HEADER := Zombie.hpp 
+HEADER := Zombie.hpp
 
 all: $(NAME)
 
