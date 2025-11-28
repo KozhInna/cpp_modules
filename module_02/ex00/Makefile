@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 11:20:53 by ikozhina          #+#    #+#              #
-#    Updated: 2025/11/26 11:56:30 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/11/28 09:53:40 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := fixed
 
-CXX := g++
+CXX := c++
 
 CXXFLAGS := -Werror -Wextra -Wall -std=c++17
 
@@ -29,13 +29,13 @@ $(NAME): $(OBJS)
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
-	
+
 $(OBJDIR)/%.o: %.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 -include $(DEPS)
 
-clean: 
+clean:
 	rm -rf $(OBJDIR)
 
 fclean: clean
