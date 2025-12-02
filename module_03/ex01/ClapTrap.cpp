@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:57:32 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/02 10:20:13 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/02 14:17:17 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::attack(const std::string& target) {
     if (!hitPoints_ || !energyPoints_)
     {
-        std::cout << "ClapTrap  " << name_ << " can't attack" << std::endl;
+        std::cout << "ClapTrap " << name_ << " can't attack" << std::endl;
         return ;
     }
     energyPoints_--;        
