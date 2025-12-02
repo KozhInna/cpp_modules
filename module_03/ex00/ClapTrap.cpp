@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:57:32 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/01 13:41:14 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:30:23 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap() {
     std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name_(name) {
+ClapTrap::ClapTrap(const std::string& name) : name_(name) {
     std::cout << "Parametarised constructor called" << std::endl;
 }
  
