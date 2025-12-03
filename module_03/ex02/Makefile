@@ -6,13 +6,13 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/29 22:30:56 by ikozhina          #+#    #+#              #
-#    Updated: 2025/12/02 13:11:20 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/12/03 10:15:52 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := claptrap
 
-CXX := g++
+CXX := c++
 
 CXXFLAGS := -Werror -Wextra -Wall -std=c++17
 
