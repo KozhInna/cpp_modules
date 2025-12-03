@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 14:32:28 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/03 13:03:03 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/03 13:24:07 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap()
 	hitPoints_ = 100;
 	energyPoints_ = 50;
 	attackDamage_ = 20;
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
@@ -28,19 +28,19 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 	hitPoints_ = 100;
 	energyPoints_ = 50;
 	attackDamage_ = 20;
-	std::cout << "ScavTrap parametarised constructor called" << std::endl;
+	std::cout << "ScavTrap parametarised constructor" << std::endl;
 }
 
 //copy constructor
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor" << std::endl;
 }
 
 //copy assignment operator
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	std::cout << "ScavTrap copy assignment operator" << std::endl;
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;
@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 //destructor
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap destructor" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
