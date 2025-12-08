@@ -6,14 +6,14 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 11:30:41 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/05 13:28:11 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:10:34 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include <iostream>
 
-Animal::Animal() : type_("unnamed")
+Animal::Animal() : type_("Unnamed")
 {
 	std::cout << "Animal calls default constructor" << std::endl;
 }
@@ -43,7 +43,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-	std::cout << "Generic animal sound" << std::endl;
+	std::cout << type_ << " makes generic sound" << std::endl;
 }
 
 std::string Animal::getType() const

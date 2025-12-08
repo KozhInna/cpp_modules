@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:58:18 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/05 14:15:45 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:25:25 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ class Dog : public Animal
 {
 	public:
 		Dog();
-		Dog(const std::string& type);
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
-		~Dog();
+		virtual ~Dog();
 
-		void makeSound() const;
+		void makeSound() const override;
 };
