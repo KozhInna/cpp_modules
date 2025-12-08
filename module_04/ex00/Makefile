@@ -6,7 +6,7 @@
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/04 15:05:32 by ikozhina          #+#    #+#              #
-#    Updated: 2025/12/05 11:16:31 by ikozhina         ###   ########.fr        #
+#    Updated: 2025/12/08 12:06:29 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX := g++
 
 CXXFLAGS := -Werror -Wextra -Wall -std=c++17
 
-SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 OBJDIR := obj
 OBJS := $(SRCS:%.cpp=$(OBJDIR)/%.o)
 DEPS := $(OBJS:.o=.d)
@@ -43,4 +43,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all re clean fclean
-	
