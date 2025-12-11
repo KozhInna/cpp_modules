@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:09:16 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/11 11:10:29 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:45:46 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	{
 		const int size = 4;
 		std::cout << "=== Creating array of 4 animals ===" << std::endl;
-		Animal* batch[size];
+		Animal* batch[size]{};
 		for (int i = 0; i < 2; i++)
 		{
 			batch[i] = new Cat();

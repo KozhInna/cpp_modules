@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:31:34 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/11 11:08:25 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:09:54 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ Cat::Cat() : Animal("Cat"), brain_(new Brain())
 	std::cout << "Cat default constructor" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), brain_(nullptr)
+Cat::Cat(const Cat& other) : Animal(other), brain_(new Brain(*other.brain_))
 {
 	std::cout << "Cat copy constructor" << std::endl;
-	brain_ = new Brain(*other.brain_);
 }
 
 Cat& Cat::operator=(const Cat& other)

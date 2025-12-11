@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:07:34 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/10 15:18:44 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:10:13 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 		std::cout << "Dog default constructor" << std::endl;
 	}
 
-	Dog::Dog(const Dog& other) : Animal(other), brain_(nullptr)
+	Dog::Dog(const Dog& other) : Animal(other), brain_(new Brain(*other.brain_))
 	{
 		std::cout << "Dog copy constructor" << std::endl;
-		brain_ = new Brain(*other.brain_);
 	}
 
 	Dog& Dog::operator=(const Dog& other)
