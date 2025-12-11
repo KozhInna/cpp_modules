@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:07:34 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/10 12:20:37 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:18:44 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 #include "Brain.hpp"
 #include <iostream>
 
-	Dog::Dog() : Animal("Dog")
+	Dog::Dog() : Animal("Dog"), brain_(new Brain())
 	{
 		std::cout << "Dog default constructor" << std::endl;
-		brain_ = new Brain();
 	}
 
 	Dog::Dog(const Dog& other) : Animal(other), brain_(nullptr)
@@ -49,7 +48,7 @@
 		std::cout << type_ << " is barking" << std::endl;
 	}
 
-	Brain* Dog::getBrain() const
+	Brain& Dog::getBrain() const
 	{
-		return brain_;
+		return *brain_;
 	}

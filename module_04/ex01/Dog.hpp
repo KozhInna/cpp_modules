@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:58:18 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/10 12:41:47 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:18:52 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Dog : public Animal
 		virtual ~Dog();
 
 		void makeSound() const override;
-		Brain* getBrain() const;
+		Brain& getBrain() const;
 };

@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 11:30:41 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/08 11:10:34 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:02:43 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void Animal::makeSound() const
 	std::cout << type_ << " makes generic sound" << std::endl;
 }
 
-std::string Animal::getType() const
+const std::string& Animal::getType() const
 {
 	return type_;
 }

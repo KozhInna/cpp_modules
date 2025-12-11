@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:19:10 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/10 11:40:50 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:08:18 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Cat : public Animal
 		virtual ~Cat();
 
 		void makeSound() const override;
-		Brain* getBrain() const;
+		Brain& getBrain() const;
 };

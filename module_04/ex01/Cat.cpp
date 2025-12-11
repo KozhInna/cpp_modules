@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:31:34 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/10 12:17:31 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:08:25 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 #include "Brain.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), brain_(new Brain())
 {
 	std::cout << "Cat default constructor" << std::endl;
-	brain_ = new Brain();
 }
 
 Cat::Cat(const Cat& other) : Animal(other), brain_(nullptr)
@@ -50,7 +49,7 @@ void Cat::makeSound() const
 	std::cout << type_ << " is meowing" << std::endl;
 }
 
-Brain* Cat::getBrain() const
+Brain& Cat::getBrain() const
 {
-	return brain_;
+	return *brain_;
 }

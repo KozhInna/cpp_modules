@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 11:25:05 by ikozhina          #+#    #+#             */
-/*   Updated: 2025/12/05 11:51:31 by ikozhina         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:02:59 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Animal
 		virtual ~Animal();
 
 		virtual void makeSound() const;
-		std::string getType() const;
+		const std::string& getType() const;
 };
