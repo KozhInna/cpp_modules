@@ -5,25 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 14:25:44 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/01/16 15:09:32 by ikozhina         ###   ########.fr       */
+/*   Created: 2026/03/25 10:26:09 by ikozhina          #+#    #+#             */
+/*   Updated: 2026/03/26 10:36:50 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include<string>
+#include <string>
+#include <exception>
 
-class Bureaucrat
-{
-	public:
-		Bureaucrat() = delete;
-		Bureaucrat(const std::string& name, int grade);
-		Bureaucrat(const Bureaucrat &other);
-		Bureaucrat& operator=(const Bureaucrat &other);
-		~Bureaucrat();
+class Bureaucrat {
+    public:
+        Bureaucrat() = delete;
+        ~Bureaucrat();
+        Bureaucrat(const std::string& n, int g);
+        Bureaucrat(const Bureaucrat& other);
+        Bureaucrat& operator=(const Bureaucrat& other);
+    
+        std::string getName() const;
+        int getGrade() const;
+        void incrementGrade();
+        void decrementGrade();
 
-	private:
-		const std::string name_;
-		int grade_;
+        class GradeTooHighException : public std::exception {
+            public:
+                const char* what() const noexcept override;
+        };
+
+        class GradeTooLowException : public std::exception {
+            public:
+                const char* what() const noexcept override;
+        };
+
+    private:
+        const std::string name_;
+        int grade_;
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

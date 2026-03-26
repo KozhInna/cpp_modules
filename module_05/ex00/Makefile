@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/16 14:25:34 by ikozhina          #+#    #+#              #
-#    Updated: 2026/01/16 14:38:43 by ikozhina         ###   ########.fr        #
+#    Created: 2026/03/25 10:26:12 by ikozhina          #+#    #+#              #
+#    Updated: 2026/03/25 10:28:15 by ikozhina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,22 +14,28 @@ NAME := bureaucrat
 
 CXX := c++
 
-CXXFLAGS := -Werror -Wall -Wextra -std=c++17
+CXXFLAGS := -Werror -Wextra -Wall -std=c++17
 
-SRCS := Bureaucrat.cpp main.cpp
-
-OBJS := $(SRCS:.cpp=.o)
+SRCS := main.cpp Bureaucrat.cpp
+OBJDIR := obj
+OBJS := $(SRCS:%.cpp=$(OBJDIR)/%.o)
+DEPS := $(OBJS:.o=.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+
+-include $(DEPS)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
