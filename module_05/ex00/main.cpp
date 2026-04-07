@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:26:01 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/03/26 10:40:58 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/03/26 15:00:02 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int main(){
             std::cout << b3 << std::endl;
 
         } 
-        catch(...) {
-            std::cout << "Caught an unknown exception." << std::endl;
+        catch(const std::exception& e) {
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
     }
     
@@ -40,7 +40,7 @@ int main(){
             Bureaucrat b3("Tom", 250);
         }
         catch(const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         } 
     }
     
@@ -50,7 +50,7 @@ int main(){
             Bureaucrat b4("Dan", 0);
         }
         catch(const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
 	}
 
@@ -64,7 +64,7 @@ int main(){
             std::cout << b1 << std::endl;
         }
         catch (const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
         std::cout << std::endl;
         try {
@@ -75,7 +75,7 @@ int main(){
             std::cout << b1 << std::endl;
         }
         catch (const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
     }
     
@@ -89,7 +89,7 @@ int main(){
             std::cout << b1 << std::endl;
         }
         catch (const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
         std::cout << std::endl;
         try {
@@ -100,7 +100,7 @@ int main(){
             std::cout << b1 << std::endl;
         }
         catch (const std::exception& e) {
-            std::cout << "Exception caught " << e.what() << std::endl;
+            std::cout << "Exception caught - " << e.what() << std::endl;
         }
     }
     return 0;

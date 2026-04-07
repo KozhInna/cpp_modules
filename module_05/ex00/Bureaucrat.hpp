@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:26:09 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/03/26 10:36:50 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:41:26 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <exception>
+#include <iostream>
 
 class Bureaucrat {
     public:
@@ -23,7 +24,7 @@ class Bureaucrat {
         Bureaucrat(const Bureaucrat& other);
         Bureaucrat& operator=(const Bureaucrat& other);
     
-        std::string getName() const;
+        const std::string& getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();

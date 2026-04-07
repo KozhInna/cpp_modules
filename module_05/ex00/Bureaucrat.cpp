@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:26:06 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/03/26 10:40:22 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:57:32 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Bureaucrat::~Bureaucrat() {
     std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-std::string Bureaucrat::getName() const {
+const std::string& Bureaucrat::getName() const {
     return name_;
 }
 
@@ -48,11 +48,11 @@ int Bureaucrat::getGrade() const {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const noexcept {
-    return "Invalid grade - above possible top grade (minimum value is 1)";
+    return "Above possible top grade";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const noexcept {
-    return "Invalid grade - below possible bottom grade (maximum value is 150)";
+    return "Below possible bottom grade";
 }
 
 void Bureaucrat::incrementGrade() {
