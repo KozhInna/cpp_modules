@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:34:45 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/07 14:52:28 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/08 13:46:37 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class ShrubberyCreationForm : public AForm {
 		std::string target_;
 
 	public:
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string& target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& src);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& src);
 		virtual ~ShrubberyCreationForm();
 
-		void executeImpl(Bureaucrat const& executor) const override;
-		ShrubberyCreationForm(const std::string& target);
+	protected:
+		void executeImpl() const override;
 };
