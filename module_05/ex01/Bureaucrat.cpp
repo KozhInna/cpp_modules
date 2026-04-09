@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:26:06 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/03/26 14:57:14 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/09 09:40:53 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void Bureaucrat::signForm(Form& form) {
     try {
         form.beSigned(*this);
         std::cout << "\033[1;30m" << name_ << " signed " << form.getName() << "\033[0m" << std::endl;
-    } catch (Form::GradeTooLowException& e) {
+    } catch (std::exception& e) {
         std::cout << "\033[1;30m" << name_ << " couldn't sign " << form.getName() <<
             " because " << e.what() << "\033[0m" << std::endl;
     } 
