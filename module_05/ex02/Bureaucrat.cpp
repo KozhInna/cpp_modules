@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:26:06 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/07 13:46:25 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/09 09:40:38 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,21 @@
 
 void Bureaucrat::signForm(AForm& form) {
     try {
-        form.beSigned(*this);
+        form.isSigned(*this);
         std::cout << "\033[1;30m" << name_ << " signed " << form.getName() << "\033[0m" << std::endl;
-    } catch (AForm::GradeTooLowException& e) {
+    } catch (std::exception& e) {
         std::cout << "\033[1;30m" << name_ << " couldn't sign " << form.getName() <<
             " because " << e.what() << "\033[0m" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const& form) const {
+    try {
+        form.execute(*this);
+        std::cout << "\033[1;30m" << name_ << " executed " << form.getName() << "\033[0m" << std::endl;
+    } catch (std::exception& e) {
+        std::cout << "\033[1;30m" << name_ << " couldn't execute " << form.getName() <<
+        " because " << e.what() << "\033[0m" << std::endl;
     }
 }
 
