@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:34:02 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/08 13:45:37 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/10 10:35:09 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class RobotomyRequestForm : public AForm {
 		std::string target_;
 
 	public:
+		RobotomyRequestForm() = delete;
 		RobotomyRequestForm(const std::string& target);
 		RobotomyRequestForm(const RobotomyRequestForm& src);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& src);
