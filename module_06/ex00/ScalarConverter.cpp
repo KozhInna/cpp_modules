@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 12:26:36 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/12 17:16:52 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/12 17:27:29 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void ScalarConverter::convertFromChar(const std::string& literal) {
 }
 
 void ScalarConverter::printResults(double d) {
-    // char
     if (d < 0 || d > 127)
         std::cout << "char: impossible" << std::endl;
     else if (!std::isprint((unsigned char)static_cast<int>(d)))
@@ -105,20 +104,17 @@ void ScalarConverter::printResults(double d) {
     else
         std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 
-    // int
     if (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(d) << std::endl;
 
-    // float
     float fval = static_cast<float>(d);
     if (std::isinf(fval) && !std::isinf(d))
         std::cout << "float: impossible" << std::endl;
     else
         std::cout << "float: " << std::fixed << std::setprecision(1) << fval << "f" << std::endl;
 
-    // double
     std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 

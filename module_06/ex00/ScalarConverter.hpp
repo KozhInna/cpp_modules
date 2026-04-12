@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 12:01:29 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/11 16:45:22 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/12 17:27:04 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ class ScalarConverter {
     public:
         static void convert(const std::string& value);
 };
-
-/* 1. is pseudo-literal → float or double
-2. starts/ends with ' → char
-3. ends with 'f', contains '.' → float
-4. contains '.' → double
-5. otherwise → int */
