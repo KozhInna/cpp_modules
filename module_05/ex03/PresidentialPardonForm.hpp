@@ -6,7 +6,7 @@
 /*   By: ikozhina <ikozhina@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:08:57 by ikozhina          #+#    #+#             */
-/*   Updated: 2026/04/08 13:45:13 by ikozhina         ###   ########.fr       */
+/*   Updated: 2026/04/10 10:36:26 by ikozhina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class PresidentialPardonForm : public AForm {
 		std::string target_;
 
 	public:
+		PresidentialPardonForm() = delete;
 		PresidentialPardonForm(const std::string& target);
 		PresidentialPardonForm(const PresidentialPardonForm& src);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& src);
