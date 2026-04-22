@@ -17,5 +17,5 @@ class BitcoinExchange {
         BitcoinExchange& operator=(const BitcoinExchange& src) = default;
         ~BitcoinExchange() = default;
 
-
+        void countBitcoins(std::ifstream& file);
 };

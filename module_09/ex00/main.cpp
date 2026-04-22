@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
 
     try {
         BitcoinExchange bitcoinData("data.csv");
+        bitcoinData.countBitcoins(file);
     } catch (const std::runtime_error& e) {
         std::cerr << e.what() << std::endl;
         return 1;
