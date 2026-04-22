@@ -9,6 +9,7 @@ class BitcoinExchange {
 
         void loadData(const std::string& file);
         static std::string trim(const std::string& s);
+		static bool validateDate(const std::string& s);
 
     public:
         BitcoinExchange() = delete;
