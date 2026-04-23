@@ -78,7 +78,7 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
             continue;
         }
         auto it = data_.lower_bound(date);
-        if (data_.empty() || (it == data_.begin() && it->first != date)) {
+        if (it == data_.begin() && it->first != date) {
             std::cerr << "Error: bad input => " << date << std::endl;
         } else if (it != data_.end() && it->first == date) {
             std::cout << date << " => " << num << " = " << (it->second * num) << std::endl;
