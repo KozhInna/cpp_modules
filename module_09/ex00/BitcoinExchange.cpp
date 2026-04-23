@@ -11,7 +11,7 @@ BitcoinExchange::BitcoinExchange(const std::string& fileName) {
 void BitcoinExchange::loadData(const std::string& fileName) {
     std::ifstream file(fileName);
     if (!file.is_open()) {
-        throw std::runtime_error("Error: could not open .csv file.");
+        throw std::runtime_error("Error: could not open database file.");
     }
 
     std::string str;
@@ -21,12 +21,18 @@ void BitcoinExchange::loadData(const std::string& fileName) {
         std::getline(ss, date, ',');
         std::getline(ss, value);
         date = trim(date);
-		if (date.empty() || !isdigit(date[0]))
+		if (date.empty() || date == "date")
 			continue;
 		if (!validateDate(date)) {
-			std::cerr << "Error: bad input => " << date << std::endl;
+			std::cerr << "Error: bad input in database => " << date << std::endl;
 			continue;
 		}
+
+        value = trim(value);
+        if (value.empty()) {
+            std::cerr << "Error: empty value in database => " << date << std::endl;
+            continue;
+        }
         try {
             data_.insert({date, std::stof(value)});
         } catch (const std::exception& e) {
@@ -52,17 +58,18 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
         std::getline(ss, date, '|');
         std::getline(ss, value);
         date = trim(date);
-		if (!isdigit(date[0]))
+		if (date.empty() || date == "date")
 			continue;
 		if (!validateDate(date)) {
 			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
+        value = trim(value);
         if (value.empty()) {
             std::cerr << "Error: bad input => " << date << std::endl;
             continue;
         }
-        double num;
+        float num;
         try {
             num  = std::stof(value);
         } catch (const std::exception& e) {
@@ -89,7 +96,6 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
     }
 }
 
-//2012-01-11
 bool BitcoinExchange::validateDate(const std::string& date) {
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-'){
 		return false;
