@@ -5,7 +5,7 @@
 
 class BitcoinExchange {
     private:
-        std::map<std::string, float> data_;
+        std::map<std::string, double> data_;
 
         void loadData(const std::string& file);
         static std::string trim(const std::string& s);

@@ -21,7 +21,7 @@ void BitcoinExchange::loadData(const std::string& fileName) {
         std::getline(ss, date, ',');
         std::getline(ss, value);
         date = trim(date);
-		if (!isdigit(date[0]))
+		if (date.empty() || !isdigit(date[0]))
 			continue;
 		if (!validateDate(date)) {
 			std::cerr << "Error: bad input => " << date << std::endl;
@@ -33,7 +33,8 @@ void BitcoinExchange::loadData(const std::string& fileName) {
             std::cerr << "Error: invalid value in database: " << e.what() << std::endl;
         }
     }
-    file.close();
+	if (data_.empty())
+		throw std::runtime_error("Error: empty database.");
 }
 
 std::string BitcoinExchange::trim(const std::string& s) {
@@ -61,7 +62,7 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
             std::cerr << "Error: bad input => " << date << std::endl;
             continue;
         }
-        float num;
+        double num;
         try {
             num  = std::stof(value);
         } catch (const std::exception& e) {
@@ -77,11 +78,11 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
             continue;
         }
         auto it = data_.lower_bound(date);
-        if (it == data_.begin() && it->first != date) {
+        if (data_.empty() || (it == data_.begin() && it->first != date)) {
             std::cerr << "Error: bad input => " << date << std::endl;
         } else if (it != data_.end() && it->first == date) {
             std::cout << date << " => " << num << " = " << (it->second * num) << std::endl;
-        } else if ((it != data_.end() && it->first != date) || (it == data_.end())){
+        } else {
             --it;
             std::cout << date << " => " << num << " = " << (it->second * num) << std::endl;
         }
@@ -106,5 +107,13 @@ bool BitcoinExchange::validateDate(const std::string& date) {
 	int day = std::stoi(date.substr(8, 2));
 	if (day < 1 || day > 31)
     	return false;
-	return true;
+
+	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	int year = std::stoi(date.substr(0, 4));
+	bool isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+
+	if (isLeap) daysInMonth[1] = 29;
+
+	return day <= daysInMonth[month - 1];
 }
