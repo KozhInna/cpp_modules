@@ -13,15 +13,25 @@ class PmergeMe {
         // vector implementation
         void fordJohnson(std::vector<int>& arr, int pairSize);
         void sortPairs(std::vector<int>& arr, int pairSize);
-        void insertJacobsthal(std::vector<int>& main, std::vector<int>& pend);
         void buildMainAndPend(std::vector<int>& arr, int pairSize,
-                              std::vector<int>& main,
-                              std::vector<int>& pend);
+                                std::vector<std::vector<int>>& mainChain,
+                                std::vector<std::vector<int>>& pendChain,
+                                std::vector<int>& bounds);
+        void insertUsingJacobsthal(std::vector<std::vector<int>>& mainChain,
+                                    std::vector<std::vector<int>>& pendChain,
+                                    std::vector<int>& bounds);
+        void insertBinary(std::vector<std::vector<int>>& mainChain, 
+                                std::vector<std::vector<int>>& pendChain, 
+                                int currJ, int aBoundIndx, std::vector<int>& bounds);
+        void resetBounds( std::vector<int>& bounds, int aBoundIndx);
     
         // print helpers
         void printBefore();
         void printAfter();
-        void printTime(clock_t vecTime, clock_t deqTime) const;
+        void printTime(double vecTime, double deqTime) const;
+
+        static int getJacobNum(int n);
+        
     
     public:
         PmergeMe() = delete;
