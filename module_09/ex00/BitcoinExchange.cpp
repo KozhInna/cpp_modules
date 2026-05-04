@@ -34,7 +34,7 @@ void BitcoinExchange::loadData(const std::string& fileName) {
             continue;
         }
         try {
-            data_.insert({date, std::stof(value)});
+            data_.insert({date, std::stod(value)});
         } catch (const std::exception& e) {
             std::cerr << "Error: invalid value in database: " << e.what() << std::endl;
         }
@@ -69,9 +69,9 @@ void BitcoinExchange::countBitcoins(std::ifstream& file) {
             std::cerr << "Error: bad input => " << date << std::endl;
             continue;
         }
-        float num;
+        double num;
         try {
-            num  = std::stof(value);
+            num = std::stod(value);
         } catch (const std::exception& e) {
             std::cerr << "Error: invalid value in input file: " << e.what() << std::endl;
             continue;
