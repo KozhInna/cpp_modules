@@ -2,6 +2,7 @@
 #include<vector>
 #include<deque>
 #include<chrono>
+#include<algorithm>
 
 //vector sorting implementation
 void PmergeMe::sortPairs(std::vector<int>& vec, int pairSize) {
