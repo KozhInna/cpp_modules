@@ -1,6 +1,7 @@
 #include "RPN.hpp"
 #include <sstream>
 #include<climits>
+#include<stdexcept>
 
 
 RPN::RPN(const std::string& input) {
