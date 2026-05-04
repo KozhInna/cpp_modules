@@ -5,7 +5,7 @@
 
 class RPN {
     private:
-        std::stack<int> stack_;
+        std::stack<long> stack_;
 
         void validateAndCalculate(const std::string& input);
 

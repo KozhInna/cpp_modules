@@ -1,5 +1,6 @@
 #include "RPN.hpp"
 #include <sstream>
+#include<climits>
 
 
 RPN::RPN(const std::string& input) {
@@ -19,11 +20,11 @@ void RPN::validateAndCalculate(const std::string& input) {
         } else if (token.size() == 1 && (token[0] == '-' || token[0] == '*' ||
                 token[0] == '+' || token[0] == '/')) {
             if (stack_.size() < 2) throw std::runtime_error("Error: not enough operands.");
-            int left = stack_.top();
+            long left = stack_.top();
             stack_.pop();
-            int right = stack_.top();
+            long right = stack_.top();
             stack_.pop();
-            int res;
+            long res;
             switch(token[0]) {
                 case '/':
                     if (left == 0) throw std::runtime_error("Error: division by zero.");
@@ -39,6 +40,7 @@ void RPN::validateAndCalculate(const std::string& input) {
                     res = right - left;
                     break;
             }
+			if (res > INT_MAX || res < INT_MIN) throw std::overflow_error("Error: int value exceeded.");
             stack_.push(res);
         } else {
             throw std::runtime_error("Error: wrong input.");
