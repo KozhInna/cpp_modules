@@ -4,7 +4,7 @@ CXX := c++
 
 CXXFLAGS := -Werror -Wextra -Wall -std=c++17
 
-SRCS := main.cpp PmergeMe.cpp
+SRCS := main.cpp PmergeMe.cpp PmergeMeUtils.cpp
 OBJDIR := obj
 OBJS := $(SRCS:%.cpp=$(OBJDIR)/%.o)
 DEPS := $(OBJS:.o=.d)
