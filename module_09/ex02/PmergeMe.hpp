@@ -42,4 +42,6 @@ class PmergeMe {
 
         void sortVector(); 
         void sortDeque(); 
+
+        static int nbr_of_comps;
 };

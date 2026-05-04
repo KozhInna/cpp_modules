@@ -5,6 +5,7 @@
 #include<cmath>
 #include<iomanip>
 
+int PmergeMe::nbr_of_comps = 0;
 
 PmergeMe::PmergeMe(int argc, char** argv) {
     if (argc < 2) {
@@ -56,6 +57,7 @@ void PmergeMe::printAfter() {
 void PmergeMe::sortPairs(std::vector<int>& vec, int pairSize) {
     int size = static_cast<int>(vec.size());
     for (int i = 0; i + 2 * pairSize <= size; i += (pairSize * 2)) {
+        nbr_of_comps++;
         if (vec[i + pairSize - 1] > vec[i + (2 * pairSize) - 1]) {
             std::swap_ranges(vec.begin() + i, 
                             vec.begin() + i + pairSize,
@@ -111,6 +113,7 @@ void PmergeMe::insertBinary(std::vector<std::vector<int>>& mainChain,
 
     while (low < high) {
         int mid = (low + high) / 2;
+        nbr_of_comps++;
         if (mainChain[mid].back() < pendChain[bIndx].back()) {
             low = mid + 1;
         } else {
@@ -153,12 +156,8 @@ void PmergeMe::insertUsingJacobsthal(std::vector<std::vector<int>>& mainChain,
         // pend starts at b2, so b_currJ exists if currJ <= pend.size() + 1
         if (!(currJ <= static_cast<int>(pendChain.size()) + 1) && static_cast<int>(pendChain.size()) >= prevJ) {
             for (int i = pendChain.size(); i >= prevJ; i--) {
-                int aBoundIndx;
-                if (i <= static_cast<int>(bounds.size())) {
-                    aBoundIndx = bounds[i - 1];
-                } else {
-                    aBoundIndx = static_cast<int>(mainChain.size()) - 1;
-                }
+                int aBoundIndx = (i <= static_cast<int>(bounds.size())) ? 
+                    bounds[i - 1] : static_cast<int>(mainChain.size()) - 1;
                 int bIndx = i - 1;
                 insertBinary(mainChain, pendChain, bIndx, aBoundIndx, bounds);    
             }
@@ -169,12 +168,13 @@ void PmergeMe::insertUsingJacobsthal(std::vector<std::vector<int>>& mainChain,
         if (!(currJ <= static_cast<int>(bounds.size()) + 1)) {
             // a_x doesn't exist, search whole main
             for (int i = currJ; i > prevJ; i--) {
-                int aBoundIndx = static_cast<int>(mainChain.size()) - 1;
+                int aBoundIndx = (i <= static_cast<int>(bounds.size())) ? 
+                    bounds[i - 1] : static_cast<int>(mainChain.size()) - 1;
                 int bIndx = i - 2;
                 insertBinary(mainChain, pendChain, bIndx, aBoundIndx, bounds);
             }
         } else {
-            // a_x exists, use bounds[currJ-1]
+            // a_x exists, use bounds[currJ - i - 2]
             for (int i = 0; i < currJ - prevJ; i++) {
                 int aBoundIndx = bounds[currJ - i - 2];
                 int bIndx = currJ - i - 2;
@@ -248,9 +248,12 @@ void PmergeMe::fordJohnson(std::vector<int>& vec, int pairSize) {
 
 void PmergeMe::sortVector() {
     printBefore();
+    nbr_of_comps = 0; 
 
     auto start = std::chrono::high_resolution_clock::now();
     fordJohnson(vec_, 1);
+    std::cout << "Number of comparisons: " << nbr_of_comps << std::endl;
+
     auto end = std::chrono::high_resolution_clock::now();
     vecTime_ = std::chrono::duration<double, std::micro>(end - start).count();
 
